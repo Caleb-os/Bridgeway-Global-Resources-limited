@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bridgeway Global Resources Ltd (BGR) – Versatile Solutions Across Trade, Logistics & Hospitality</title>
+  <meta name="description" content="Bridgeway Global Resources Ltd (BGR): trading, import/export, logistics & haulage, hospitality & travel, water & waste services, aluminum works, and more." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1220; /* deep navy */
+      --card:#0f182b;
+      --muted:#97a0b8;
+      --text:#eef3ff;
+      --brand:#4cc9f0; /* cyan */
+      --brand-2:#a8dadc; /* soft aqua */
+      --accent:#42f59e; /* mint */
+      --warn:#ffd166; /* amber */
+      --danger:#ef476f; /* pink/red */
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg),#08101f 40%, #070d19);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;border-radius:12px}
+    .container{width:min(1160px,92%);margin:0 auto}
+
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:50;background:rgba(8,16,31,.6);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;box-shadow:var(--shadow)}
+    .logo span{font-weight:800;color:#001b2a}
+    .brand h1{font-size:18px;margin:0;letter-spacing:.2px}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{padding:8px 12px;border-radius:12px;color:var(--muted);font-weight:600}
+    .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.06)}
+    .cta{background:linear-gradient(135deg,var(--brand),var(--accent));color:#001b2a;padding:10px 16px;border-radius:12px;font-weight:800;box-shadow:var(--shadow)}
+
+    /* HERO */
+    .hero{padding:72px 0 32px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.12);color:var(--brand-2);font-weight:700;background:rgba(76,201,240,.08)}
+    .title{font-size:clamp(28px,5vw,48px);line-height:1.05;margin:12px 0 10px}
+    .lead{color:var(--muted);font-size:18px}
+    .hero-actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .btn{padding:12px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.08);font-weight:700;background:#0e172a}
+    .btn:hover{transform:translateY(-2px);transition:.2s ease;box-shadow:0 8px 20px rgba(0,0,0,.28)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--accent));color:#001b2a;border:none}
+
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));padding:18px;border-radius:var(--radius);border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+    .stat{background:rgba(255,255,255,.04);padding:12px;border-radius:14px;text-align:center}
+    .stat h3{margin:0;font-size:22px}
+    .stat p{margin:6px 0 0;color:var(--muted);font-size:12px}
+
+    /* STRIPES */
+    .strip{margin:22px 0 40px;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+    .pill{border:1px dashed rgba(255,255,255,.14);padding:10px;border-radius:12px;color:var(--brand-2);text-align:center;background:rgba(255,255,255,.03)}
+
+    /* SECTIONS */
+    section{padding:44px 0}
+    .section-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:18px}
+    .section-head h2{margin:0;font-size:28px}
+    .section-head p{margin:6px 0 0;color:var(--muted)}
+
+    /* SERVICES */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 8px}
+    .card p{margin:0;color:var(--muted)}
+    .tag{display:inline-block;margin-top:10px;padding:6px 10px;border-radius:999px;background:rgba(76,201,240,.1);border:1px solid rgba(76,201,240,.3);color:var(--brand)}
+
+    /* HIGHLIGHTS */
+    .hi{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .hi .card{display:flex;gap:16px;align-items:flex-start}
+    .hi .card .icon{min-width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;color:#001b2a;font-weight:900}
+
+    /* PROJECTS */
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{position:relative;overflow:hidden;border-radius:16px;border:1px solid rgba(255,255,255,.08)}
+    .project img{display:block}
+    .project .meta{position:absolute;inset:auto 0 0 0;padding:14px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.52));}
+
+    /* CTA STRIP */
+    .cta-strip{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:center;background:linear-gradient(90deg,rgba(76,201,240,.12),rgba(66,245,158,.12));border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px}
+
+    /* ABOUT */
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .kpi{background:rgba(255,255,255,.04);padding:16px;border-radius:14px;text-align:center}
+
+    /* TESTIMONIALS */
+    .testi{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    blockquote{margin:0;padding:0}
+    .quote{position:relative;background:rgba(255,255,255,.04);padding:16px;border-radius:14px}
+    .quote:before{content:'\201C';font-size:48px;position:absolute;top:-14px;left:10px;color:var(--brand-2);opacity:.25}
+    .who{margin-top:10px;color:var(--muted);font-size:13px}
+
+    /* CONTACT */
+    form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .full{grid-column:1/3}
+    label{font-size:12px;color:var(--muted);display:block;margin-bottom:6px}
+    input,textarea,select{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:#0d1526;color:var(--text)}
+    textarea{min-height:120px;resize:vertical}
+    .small{font-size:12px;color:var(--muted)}
+
+    /* FOOTER */
+    footer{padding:28px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.08)}
+    .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:22px}
+    .foot h4{margin:0 0 10px;color:var(--text)}
+    .copyright{margin-top:18px;text-align:center;font-size:12px}
+
+    /* RESPONSIVE */
+    @media (max-width: 980px){
+      .hero-grid, .cta-strip, .hi{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr 1fr}
+      .grid, .testi, .foot, .kpis{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 620px){
+      .nav-links{display:none}
+      .projects{grid-template-columns:1fr}
+      .grid, .testi, .foot, .kpis{grid-template-columns:1fr}
+      form{grid-template-columns:1fr}
+      .full{grid-column:auto}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo"><span>BGR</span></div>
+        <h1>Bridgeway Global Resources Ltd</h1>
+      </div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#sectors">Sectors</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="cta">Get a Quote</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">Incorporated in Nigeria · RC‑1450229 · 2017</span>
+        <h2 class="title">Versatile solutions across <span style="color:var(--brand)">trade</span>, <span style="color:var(--accent)">logistics</span> & <span style="color:var(--warn)">hospitality</span>.</h2>
+        <p class="lead">Bridgeway Global Resources (BGR) is a multidisciplinary company delivering value in general goods trading, import/export, supply & haulage, aluminum services, hospitality & travel, and environmental utilities.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">Request Proposal</a>
+          <a class="btn" href="#services">Explore Services</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><h3 id="years">8+</h3><p>Years in operation</p></div>
+          <div class="stat"><h3>24/7</h3><p>Client Support</p></div>
+          <div class="stat"><h3>Multi‑Sector</h3><p>Capabilities</p></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1581093448799-8af67b1b9ee5?q=80&w=1600&auto=format&fit=crop" alt="Logistics & trade concept"/>
+        <div class="small" style="margin-top:10px">From procurement to delivery, BGR bridges supply and demand reliably across borders.</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- STRIP -->
+  <div class="container strip">
+    <div class="pill">Import & Export</div>
+    <div class="pill">Supply & Haulage</div>
+    <div class="pill">Aluminum Works</div>
+    <div class="pill">Hospitality & Travel</div>
+    <div class="pill">Water & Waste Services</div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Core Services</h2>
+          <p>Execution-focused teams with compliance, safety, and quality built in.</p>
+        </div>
+        <a href="#contact" class="btn">Talk to Sales</a>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>General Trading & Distribution</h3>
+          <p>Procurement, representation for manufacturers, and wholesale distribution of general merchandise with transparent sourcing and documentation.</p>
+          <span class="tag">Buying Agents</span>
+        </div>
+        <div class="card">
+          <h3>Import / Export</h3>
+          <p>End‑to‑end cross‑border operations: customs liaison, documentation, freight coordination, and last‑mile delivery.</p>
+          <span class="tag">Customs & Compliance</span>
+        </div>
+        <div class="card">
+          <h3>Supply, Haulage & Logistics</h3>
+          <p>Reliable movement of goods, inventory management, and transport solutions optimized for cost, time, and safety.</p>
+          <span class="tag">Fleet & Warehousing</span>
+        </div>
+        <div class="card">
+          <h3>Aluminum Services</h3>
+          <p>Fabrication, installation, and maintenance for architectural aluminum (doors, windows, curtain walls, cladding).</p>
+          <span class="tag">Fabrication</span>
+        </div>
+        <div class="card">
+          <h3>Hospitality & Travel</h3>
+          <p>Boutique services, hotel & catering support, plus travel & tours coordination for individuals and corporate clients.</p>
+          <span class="tag">Guest Experience</span>
+        </div>
+        <div class="card">
+          <h3>Water, Sewage & Waste</h3>
+          <p>Utilities support including supply of potable water, basic wastewater handling, and waste logistics in partnership with licensed providers.</p>
+          <span class="tag">Environmental</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS / DIFFERENTIATORS -->
+  <section id="sectors">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Why BGR</h2>
+          <p>Built for reliability, scale, and regulatory assurance.</p>
+        </div>
+      </div>
+      <div class="hi">
+        <div class="card">
+          <div class="icon">✓</div>
+          <div>
+            <h3>Regulatory First</h3>
+            <p>Registered in Nigeria (RC‑1450229). We prioritize permits, documentation, and safety in every engagement.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="icon">↔</div>
+          <div>
+            <h3>Multi‑Sector Flexibility</h3>
+            <p>From goods distribution to hospitality, our multidisciplinary team adapts to evolving client needs.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="icon">⚙</div>
+          <div>
+            <h3>Operational Excellence</h3>
+            <p>Process‑driven delivery with SLAs, KPIs, and transparent reporting across the supply chain.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="icon">🌍</div>
+          <div>
+            <h3>Cross‑Border Capability</h3>
+            <p>Import/export and international trade representation that keeps your business moving.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS / CASES (PLACEHOLDERS) -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Sample Projects</h2>
+          <p>Representative work to illustrate scope (replace with your real projects).</p>
+        </div>
+        <div class="small"></div>
+      </div>
+      <div class="projects">
+        <figure class="project">
+          <img src="https://images.unsplash.com/photo-1542683087-21e6ecf8fbd7?q=80&w=1600&auto=format&fit=crop" alt="Warehouse logistics" />
+          <figcaption class="meta">
+            <strong>National Distribution Rollout</strong><br>
+            Inventory staging and last‑mile delivery for FMCG across 6 states.
+          </figcaption>
+        </figure>
+        <figure class="project">
+          <img src="https://images.unsplash.com/photo-1540629548064-470b5b5628ab?q=80&w=1600&auto=format&fit=crop" alt="Customs & freight" />
+          <figcaption class="meta">
+            <strong>Import/Export Compliance</strong><br>
+            Customs documentation and port clearance for engineering components.
+          </figcaption>
+        </figure>
+        <figure class="project">
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop" alt="Hospitality" />
+          <figcaption class="meta">
+            <strong>Hospitality Support</strong><br>
+            Catering & guest services for a 200‑delegate corporate retreat.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section>
+    <div class="container cta-strip">
+      <div>
+        <h3 style="margin:6px 0 6px">Need a dependable partner across trade, logistics, or hospitality?</h3>
+        <p class="small">Tell us what you’re working on, and we’ll map a cost‑effective plan with timelines and milestones.</p>
+      </div>
+      <div style="text-align:right">
+        <a class="btn primary" href="#contact">Start Your Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>About Bridgeway Global Resources</h2>
+          <p>Incorporated November 2, 2017 · Private company limited by shares</p>
+        </div>
+      </div>
+      <p class="lead">BGR exists to bridge supply and demand with speed, compliance, and service excellence. We combine trading expertise with logistics execution, supported by hospitality and utilities capabilities to deliver end‑to‑end value for clients.</p>
+      <div class="kpis" style="margin-top:14px">
+        <div class="kpi"><h3>RC‑1450229</h3><div class="small">CAC Registration</div></div>
+        <div class="kpi"><h3>Multi‑Sector</h3><div class="small">Trading · Logistics · Hospitality</div></div>
+        <div class="kpi"><h3>Process‑Driven</h3><div class="small">SOPs · KPIs · SLAs</div></div>
+        <div class="kpi"><h3>Client‑Centric</h3><div class="small">Transparent Reporting</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (PLACEHOLDER) -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>What Clients Say</h2>
+          <p></p>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="quote"><blockquote>“Reliable import partner. Documentation and delivery were on point.”</blockquote><div class="who">Procurement Lead, Engineering Firm</div></div>
+        <div class="quote"><blockquote>“Our interstate distribution improved significantly with BGR’s haulage plan.”</blockquote><div class="who">Operations Manager, FMCG</div></div>
+        <div class="quote"><blockquote>“Smooth guest services for our corporate retreat—great attention to detail.”</blockquote><div class="who">Admin, Consulting Company</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Contact & RFQ</h2>
+          <p>Fill the form and our team will respond promptly.</p>
+        </div>
+      </div>
+      <form id="rfqForm">
+        <div>
+          <label for="name">Full Name</label>
+          <input id="name" name="name" placeholder="Jane Doe" required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        </div>
+        <div class="full">
+          <label for="service">Service Area</label>
+          <select id="service" name="service" required>
+            <option value="">Select a service…</option>
+            <option>General Trading & Distribution</option>
+            <option>Import / Export</option>
+            <option>Supply, Haulage & Logistics</option>
+            <option>Aluminum Services</option>
+            <option>Hospitality & Travel</option>
+            <option>Water, Sewage & Waste</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="message">Project / Request Details</label>
+          <textarea id="message" name="message" placeholder="Tell us about your needs, timelines, locations, volumes…" required></textarea>
+        </div>
+        <div class="full">
+          <button class="btn primary" type="submit">Send Request</button>
+          <span class="small" id="formStatus" style="margin-left:12px"></span>
+        </div>
+      </form>
+
+      <div style="margin-top:18px" class="small">
+        <strong>Note:</strong> Replace contact details below with your official numbers and addresses.
+      </div>
+
+      <div class="grid" style="margin-top:14px">
+        <div class="card">
+          <h3>Office</h3>
+          <p>Bridgeway Global Resources Ltd (BGR)<br/>Lagos-Ibadan, Nigeria<br/>RC‑1450229</p>
+        </div>
+        <div class="card">
+          <h3>Contact</h3>
+          <p>Tel:+234 ( 0) 8062139885<br/>Tel:+234 ( 0) 915346432<br/>Email: contact@bridgeway1@yahoo.com</p>
+
+        </div>
+        <div class="card">
+          <h3>Working Hours</h3>
+          <p>Mon–Fri: 8:30–17:30 · Sat: 10:00–14:00</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container foot">
+      <div>
+        <h4>Bridgeway Global Resources</h4>
+        <p class="small">A versatile Nigerian company delivering value across general trading, logistics & haulage, aluminum works, hospitality & travel, and environmental utilities.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <p class="small">Trading & Distribution<br/>Import / Export<br/>Supply & Haulage<br/>Aluminum Services<br/>Hospitality & Travel<br/>Water & Waste</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <p class="small">About<br/>Projects<br/>Testimonials<br/>Contact</p>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <p class="small">© <span id="year"></span> BGR. All rights reserved.</p>
+      </div>
+    </div>
+    <div class="container copyright">Made by Caleb's Studio for Bridgeway Global Resources Ltd · Lagos, Nigeria</div>
+  </footer>
+
+  <!-- JSON‑LD (basic) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Bridgeway Global Resources Ltd",
+    "legalName": "Bridgeway Global Resources Limited",
+    "foundingDate": "2017-11-02",
+    "address": {"@type":"PostalAddress","addressCountry":"NG"},
+    "url": "https://example.com/bgr",
+    "sameAs": [],
+    "description": "A multidisciplinary Nigerian company in general trading, import/export, logistics & haulage, aluminum works, hospitality & travel, and environmental utilities.",
+    "brand": {"@type":"Brand","name":"BGR"}
+  }
+  </script>
+
+  <script>
+    // dynamic year + years active
+    const yr = document.getElementById('year');
+    if(yr){ yr.textContent = new Date().getFullYear(); }
+    const yearsEl = document.getElementById('years');
+    const startYear = 2017;
+    const now = new Date().getFullYear();
+    const active = Math.max(1, now - startYear);
+    if(yearsEl){ yearsEl.textContent = active + "+"; }
+
+    // simple form handler (demo only)
+    const form = document.getElementById('rfqForm');
+    const status = document.getElementById('formStatus');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      status.textContent = 'Submitting…';
+      setTimeout(()=>{
+        status.textContent = 'Request received! Our team will contact you shortly.';
+        form.reset();
+      }, 800);
+    });
+  </script>
+</body>
+</html>
