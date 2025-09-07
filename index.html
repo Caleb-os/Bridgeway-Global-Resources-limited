@@ -435,7 +435,7 @@
     <div class="container copyright">Made by Caleb's Studio for Bridgeway Global Resources Ltd · Lagos, Nigeria</div>
   </footer>
 
-  <!-- JSON‑LD (basic) -->
+ <!-- JSON-LD (basic) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -454,29 +454,46 @@
   <script>
     // dynamic year + years active
     const yr = document.getElementById('year');
-    if(yr){ yr.textContent = new Date().getFullYear(); }
+    if (yr) { yr.textContent = new Date().getFullYear(); }
     const yearsEl = document.getElementById('years');
     const startYear = 2017;
     const now = new Date().getFullYear();
     const active = Math.max(1, now - startYear);
-    if(yearsEl){ yearsEl.textContent = active + "+"; }
+    if (yearsEl) { yearsEl.textContent = active + "+"; }
 
-    // simple form handler (demo only)
-    const form = document.getElementById('rfqForm');
-    const status = document.getElementById('formStatus');
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      status.textContent = 'Submitting…';
-      setTimeout(()=>{
-        status.textContent = 'Request received! Our team will contact you shortly.';
-        form.reset();
-      }, 800);
-    });
+    // real Formspree submission with status messages
+    const form = document.getElementById("rfqForm");
+    const status = document.getElementById("formStatus");
+
+    async function handleSubmit(event) {
+      event.preventDefault();
+      status.textContent = "Submitting…";
+
+      try {
+        const data = new FormData(form);
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          status.textContent = "✅ Request received! Our team will contact you shortly.";
+          form.reset();
+        } else {
+          const errorData = await response.json();
+          if (Object.hasOwn(errorData, 'errors')) {
+            status.textContent = "⚠️ " + errorData["errors"].map(e => e.message).join(", ");
+          } else {
+            status.textContent = "⚠️ Oops! There was a problem submitting your form.";
+          }
+        }
+      } catch (error) {
+        status.textContent = "⚠️ Network error. Please try again later.";
+      }
+    }
+
+    form.addEventListener("submit", handleSubmit);
   </script>
 </body>
 </html>
-
-
-
-
-
